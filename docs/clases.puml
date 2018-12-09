@@ -1,0 +1,29 @@
+@startuml
+
+namespace net.chat #EEEEEE {
+  interface IChat {
+    -conexion
+    -room
+    +conectar()
+    +room()
+    +enviar()
+  }
+  IChat <|-- ChatMatrix
+  IChat <|-- ChatIRC
+  IChat <|-- ChatWhatsapp
+}
+
+class ChatFabrica {
+  -IChat
+  +getConexion()
+}
+
+ChatFabrica <|-- net.chat
+
+class Principal {
+  +main()
+}
+
+Principal <|-- ChatFabrica
+
+@enduml
