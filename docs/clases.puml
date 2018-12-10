@@ -4,9 +4,13 @@ namespace net.chat #EEEEEE {
   interface IChat {
     -conexion
     -room
-    +conectar()
-    +room()
-    +enviar()
+    +connect()
+    +disconnect()
+    +joinRoom()
+    +createRoom()
+    +leaveRoom()
+    +message()
+    +userList()
   }
   IChat <|-- ChatMatrix
   IChat <|-- ChatIRC
